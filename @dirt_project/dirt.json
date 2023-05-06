@@ -1,0 +1,10 @@
+{
+  "projectConfig": {
+    "projectName": "dirt_fe_builder",
+    "frontend": "react",
+    "withStorybook": true,
+    "installPrettier": true,
+    "initializeGit": true,
+    "verboseLogs": false
+  }
+}
