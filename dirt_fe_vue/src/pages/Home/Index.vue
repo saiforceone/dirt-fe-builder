@@ -33,12 +33,15 @@
       </h1>
       <p class="text-slate-400 text-lg">
         <span class="font-bold text-white">D.I.R.T Stack:</span> The modern way
-        of building reactive fullstack Django web applications. D.I.R.T combines
-        the power of <span class="font-bold text-white">D</span>jango,
+        of building reactive fullstack Django web applications.
+        <span class="text-white">D.I.R.T</span> combines the power of
+        <span class="font-bold text-white">D</span>jango,
         <span class="font-bold text-white">I</span>nertiaJs,
-        <span class="font-bold text-white">R</span>eactivity of
-        <span class="font-bold text-white">V</span>ue and smoothness of
-        <span class="font-bold text-white">T</span>ailwind CSS.
+        <span class="font-bold text-white">R</span>eactive UI of
+        <span class="font-bold capitalize underline">{{
+          projectConfig.frontend
+        }}</span>
+        and smoothness of <span class="font-bold text-white">T</span>ailwindcss.
       </p>
 
       <h2 class="text-white text-4xl font-heading">Ready to dig in?</h2>
@@ -106,7 +109,7 @@
           href="https://tailwindcss.com/"
         >
           <tailwindcss-icon :size="iconSize" style="fill: white" />
-          <span class="text-2xl">Tailwind CSS</span>
+          <span class="text-2xl">Tailwindcss</span>
         </a>
       </div>
       <p class="text-slate-400 text-lg">
