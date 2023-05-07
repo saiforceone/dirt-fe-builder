@@ -1,6 +1,6 @@
 <template>
-  <div class="-py-2 mb-2" :class="[rootElement ? 'ml-0' : 'ml-8']">
-    <div class="flex items-center pl-2">
+  <div class="-px-2 mb-2" :class="[rootElement ? 'ml-0' : 'ml-8']">
+    <div class="flex items-center">
       <slot name="icon"></slot>
       <div class="flex flex-col px-2">
         <span class="text-lg font-semibold">{{ title }}</span>
@@ -9,7 +9,7 @@
         }}</span>
       </div>
     </div>
-    <slot name="children"></slot>
+    <slot></slot>
   </div>
 </template>
 

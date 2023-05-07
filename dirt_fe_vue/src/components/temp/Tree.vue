@@ -1,5 +1,5 @@
 <template>
-  <tree-root>
+  <div>
     <tree-root v-for="root in treeData">
       <tree-element
         :root-element="root.rootElement"
@@ -7,11 +7,7 @@
         :subtitle="root.description"
       >
         <template v-slot:icon>
-          <code-bracket-square-icon
-            v-if="root.kind === 'file'"
-            class="h-8 w-8"
-          />
-          <folder-icon v-if="root.kind === 'folder'" class="h-8 w-8" />
+          <tree-icon :icon-type="root.kind" />
         </template>
         <tree-element
           :root-element="element.rootElement"
@@ -20,16 +16,27 @@
           v-if="root.resources"
           v-for="element in root.resources"
         >
+          <template v-slot:icon>
+            <tree-icon slot="icon" :icon-type="root.kind" />
+          </template>
+          <tree-element
+            :root-element="subElement.rootElement" :content="subElement.description" :title="subElement.label"
+            v-if="element.resources" v-for="subElement in element.resources">
+            <template v-slot:icon>
+              <tree-icon slot="icon" :icon-type="subElement.kind" />
+            </template>
+          </tree-element>
         </tree-element>
       </tree-element>
     </tree-root>
-  </tree-root>
+  </div>
 </template>
 
 <script lang="ts">
+// This is a temporary component and really should be deleted / replaced with your own
 // imports
-import { defineComponent } from 'vue';
-import { FolderIcon, CodeBracketSquareIcon } from '@heroicons/vue/20/solid';
+import {defineComponent} from 'vue';
+import {FolderIcon, CodeBracketSquareIcon} from '@heroicons/vue/20/solid';
 
 // Type definitions
 type ProjectResource = {
@@ -41,15 +48,18 @@ type ProjectResource = {
 };
 
 // Project configuration
-import { projectConfig } from '../../../../@dirt_project/dirt.json';
+import {projectConfig} from '../../../../@dirt_project/dirt.json';
 // Sub components
 import TreeRoot from './TreeRoot.vue';
+import TreeIcon from './TreeIcon.vue';
 import TreeElement from './TreeElement.vue';
+
 export default defineComponent({
   components: {
     CodeBracketSquareIcon,
     FolderIcon,
     TreeRoot,
+    TreeIcon,
     TreeElement,
   },
   computed: {
@@ -62,11 +72,13 @@ export default defineComponent({
           label: '@dirt_project',
           description: 'Contains project config / settings',
           kind: 'folder',
+          rootElement: true,
         },
         {
           label: 'dirt_fe_vue',
           description: 'Contains the Vue app including pages, components, etc.',
           kind: 'folder',
+          rootElement: true,
           resources: [
             {
               label: 'src',
@@ -98,6 +110,7 @@ export default defineComponent({
           label: this.projectConfig.projectName,
           description: 'Main Django web application',
           kind: 'folder',
+          rootElement: true,
         },
       ];
 
@@ -106,6 +119,7 @@ export default defineComponent({
           label: '.storybook',
           description: 'Contains configuration for StorybookJS',
           kind: 'folder',
+          rootElement: true,
         });
       }
 
