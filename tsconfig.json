@@ -17,5 +17,5 @@
    "jsx": "react-jsx",
    "types": ["vite/client"],
  },
- "include": ["dirt_fe_react/src"],
+ "include": ["dirt_fe_react/src", "dirt_fe_vue/src"],
 }

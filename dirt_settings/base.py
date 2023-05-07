@@ -129,7 +129,7 @@ CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 
 # Where ViteJS assets are built.
-DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'dirt_react_fe' / 'dist'
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'dirt_fe_vue' / 'dist'
 
 # If we should use HMR or not.
 DJANGO_VITE_DEV_MODE = DEBUG

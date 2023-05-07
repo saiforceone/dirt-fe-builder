@@ -1,7 +1,7 @@
 {
   "projectConfig": {
     "projectName": "dirt_fe_builder",
-    "frontend": "react",
+    "frontend": "vue",
     "withStorybook": true,
     "installPrettier": true,
     "initializeGit": true,
