@@ -26,7 +26,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 //     },
 //   },
 //   resolve: {
-//     extensions: ['.js', '.json'],
+//     extensions: ['.js', '.json', '.ts', '.tsx'],
 //   },
 //   build: {
 //     outDir: resolve('./dirt_fe_react/dist'),
@@ -50,6 +50,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
  */
 
 import Vue from '@vitejs/plugin-vue';
+import * as path from "path";
 module.exports = {
   plugins: [tsconfigPaths(), Vue()],
   root: resolve('./dirt_fe_vue'),
@@ -64,7 +65,10 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    alias: {
+      '~': path.resolve(__dirname, './dirt_fe_vue/src'),
+    },
+    extensions: ['.js', '.json', '.vue'],
   },
   build: {
     outDir: resolve('./dirt_fe_vue/dist'),
@@ -77,7 +81,9 @@ module.exports = {
         main: resolve('./dirt_fe_vue/src/main.js'),
       },
       output: {
-        chunkFileNames: undefined,
+        chunkFileNames: '[name].js',
+        entryFileNames: `[name].js`,
+        assetFileNames: `[name].[ext]`,
       },
     },
   },
