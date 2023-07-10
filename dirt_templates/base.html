@@ -13,10 +13,10 @@
         <link rel="stylesheet" href="{% static 'dist/css/app.css' %} "/>
         <!-- vite hmr -->
         {% vite_hmr_client %}
-        {% vite_asset 'src/main.js' %}
+        {% vite_asset 'src/main.jsx' %}
         <title>D.I.R.T Stack - Django Inertia Reactive (React/Vue) Tailwind CSS</title>
     </head>
-    <body>
+    <body class="h-screen">
         <!-- inertia -->
         {% block inertia %}{% endblock %}
     </body>
