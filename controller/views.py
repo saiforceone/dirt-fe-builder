@@ -5,5 +5,7 @@ from inertia import inertia
 
 @inertia('Controller/Main')
 def index(request):
-    return {}
+    return {
+        'controllerName': 'controller',
+    }
 
