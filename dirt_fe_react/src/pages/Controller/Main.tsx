@@ -8,10 +8,10 @@ const Main = ({ controllerName }: BaseControllerProps): React.ReactNode => {
     <div className="w-full h-full bg-gradient-to-b from-[#02111B] to-[#30292F]">
       <div className="flex flex-col container mx-auto md:max-w-5xl gap-y-10 text-center h-full p-4">
         <TbShovel className="self-center text-white" size={100} />
-        <h1 className="text-white text-7xl font-heading">
+        <h1 className="text-white text-2xl sm:text-3xl md:text-7xl font-heading">
           Controller / Django App: {controllerName}
         </h1>
-        <h3 className="text-3xl text-white font-heading underline">
+        <h3 className="text-2xl sm:text-3xl text-white font-heading underline">
           General Information
         </h3>
         <div className="flex flex-col self-center gap-y-2 w-4/5 md:w-3/5">
@@ -25,7 +25,7 @@ const Main = ({ controllerName }: BaseControllerProps): React.ReactNode => {
             <span className="font-semibold bg-blue-800 px-1 rounded">{`${controllerName}/views.py`}</span>
           </p>
         </div>
-        <h3 className="text-3xl text-white font-heading underline">
+        <h3 className="text-2xl sm:text-3xl text-white font-heading underline">
           Database Information
         </h3>
         <div className="flex flex-col self-center w-4/5 md:w-3/5">
@@ -49,7 +49,7 @@ const Main = ({ controllerName }: BaseControllerProps): React.ReactNode => {
             </span>
           </div>
         </div>
-        <h3 className="text-3xl text-white font-heading underline">
+        <h3 className="text-2xl sm:text-3xl text-white font-heading underline">
           Resources
         </h3>
         <p className="text-white">
