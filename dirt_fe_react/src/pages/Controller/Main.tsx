@@ -22,7 +22,9 @@ const Main = ({ controllerName }: BaseControllerProps): React.ReactNode => {
           <p className="text-white">
             To change the props that are passed to this inertia view, edit the
             dictionary returned by the following file:{' '}
-            <span className="font-semibold bg-blue-800 px-1 rounded">{`${controllerName}/views.py`}</span>
+            <span className="font-semibold bg-blue-800 px-1 rounded">
+              {{ controllerName } + '/views.py'}
+            </span>
           </p>
         </div>
         <h3 className="text-2xl sm:text-3xl text-white font-heading underline">
@@ -31,7 +33,9 @@ const Main = ({ controllerName }: BaseControllerProps): React.ReactNode => {
         <div className="flex flex-col self-center w-4/5 md:w-3/5">
           <p className="text-white">
             To make use of the models file and run db migrations{' '}
-            <span className="font-semibold bg-blue-800 px-1 rounded">{`${controllerName}/models.py`}</span>
+            <span className="font-semibold bg-blue-800 px-1 rounded">
+              {{ controllerName } + '/models.py'}
+            </span>
             , you will need to add{' '}
             <span className="text-gray-100">{controllerName}</span> to{' '}
             <span className="font-semibold text-white px-1 rounded bg-blue-800">
